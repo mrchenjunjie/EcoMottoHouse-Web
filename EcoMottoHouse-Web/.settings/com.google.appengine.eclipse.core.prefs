@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+gaeDoJarClasses=false
+gaeEnableJarSplitting=true
+gaeRetainStagingDirectory=false
+validationExclusions=src/main/java/org/apache/EcoMotto/tcpip/

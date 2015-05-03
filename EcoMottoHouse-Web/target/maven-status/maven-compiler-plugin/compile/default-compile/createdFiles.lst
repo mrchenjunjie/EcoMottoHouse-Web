@@ -1,0 +1,9 @@
+org\apache\EcoMotto\web\LoginController.class
+org\apache\EcoMotto\web\component\IPersonService.class
+org\apache\EcoMotto\web\RegisterController.class
+org\apache\EcoMotto\web\IndexController.class
+org\apache\EcoMotto\web\MobileLoginController.class
+org\apache\EcoMotto\web\config\EcoMottoWebConfig.class
+org\apache\EcoMotto\web\component\PersonService.class
+org\apache\EcoMotto\web\Customer.class
+org\apache\EcoMotto\web\config\EcoMottoWebInitializer.class
