@@ -3,8 +3,6 @@ package org.apache.EcoMotto.web;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,25 +18,19 @@ public class QueryController {
         //private IPersonService personService;
 	@RequestMapping(value={"/api/query"}, method=RequestMethod.POST)
     public @ResponseBody String onSubmit(@RequestParam(value="data", required=false) String data,
-                Model model) throws IOException, URISyntaxException, JSONException, SQLException {
+                Model model) throws IOException, URISyntaxException, JSONException, SQLException, InterruptedException {
 
                 model.addAttribute("data", data);
-              
-                System.out.println("Testing into request controller?");
-                JSONObject jsonObject = new JSONObject(data);
-                JSONObject result = new JSONObject();
-                Customer customer = new Customer();
-                DataStore dataStore = new DataStore();
-                System.out.println("Message from client request: "+jsonObject.toString());
-                customer = dataStore.readCustomer(jsonObject.getString("username"));
-                String query = jsonObject.getString("query");
-                if(customer.getPassword().equals(jsonObject.get("password"))){
-                	result = dataStore.selectQuery(query);
+                JSONObject request = new JSONObject(data);
+                QueryThreadController queryThread = new QueryThreadController(request);
+    	        
+    	        queryThread.start();
+    	        Thread.sleep(5000);
+                if(queryThread.getResult() != null){
+                	return queryThread.getResult().toString();
                 }else{
-                	result.put("result", "login failed!");
+                	return "fail!";
                 }
-                result.put("response", "testing response");
-                return result.toString();
                 
         }
 }
