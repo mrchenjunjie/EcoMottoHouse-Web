@@ -19,19 +19,31 @@ public class QueryThreadController extends Thread{
 		//JSONObject resultJson = new JSONObject();
         Customer customer = new Customer();
         DataStore dataStore = new DataStore();
+        JSONObject tempResult = new JSONObject();
         try {
         	//JSONObject jsonObject = new JSONObject(data);
             
             //System.out.println("Message from client request: "+jsonObject.toString());
-            customer = dataStore.readCustomer(this.request.getString("email"));
-            String query = this.request.getString("query");
-            if(customer.getPassword().equals(this.request.get("password"))){
-            	System.out.println("After user validation, start querying!");
-            	result = dataStore.selectQuery(query);
-            	System.out.println("Result from database: "+result.toString());
-            }else{
-            	result.put("result", "login failed!");
-            }
+        	if(dataStore.ifCustomerExist(this.request.getString("email")) == true){
+        		if(dataStore.ifAPIRole(this.request.getString("email")) == true){
+        			customer = dataStore.readCustomer(this.request.getString("email"));
+                    String query = this.request.getString("query");
+                    if(customer.getPassword().equals(this.request.get("password"))){
+                    	System.out.println("After user validation, start querying!");
+                    	tempResult = dataStore.selectQuery(query);
+                    	System.out.println("Result from database: "+tempResult.toString());
+                    }else{
+                    	tempResult.put("result", "User ID does not match with password");
+                    }
+        		}else{
+        			tempResult.put("result", "This user is not allowed to use API function");
+        		}
+        	}else{
+        		tempResult.put("result", "User ID does not exist in the system");
+        	}
+            
+        	this.setResult(tempResult);
+        	
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

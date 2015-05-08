@@ -22,6 +22,7 @@ public class QueryController {
 
                 model.addAttribute("data", data);
                 JSONObject request = new JSONObject(data);
+
                 QueryThreadController queryThread = new QueryThreadController(request);
     	        
     	        queryThread.start();
@@ -29,8 +30,7 @@ public class QueryController {
                 if(queryThread.getResult() != null){
                 	return queryThread.getResult().toString();
                 }else{
-                	return "fail!";
-                }
-                
+                	return "Fail to Exception!";
+                }                
         }
 }

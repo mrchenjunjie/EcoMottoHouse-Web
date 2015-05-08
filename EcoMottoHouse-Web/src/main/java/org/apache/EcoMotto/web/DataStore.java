@@ -55,6 +55,62 @@ public class DataStore {
         conn.close();
 	}
 	
+	public boolean ifCustomerExist(String customerUsername) throws SQLException{
+		boolean exist = false;
+		
+		String url = "jdbc:oracle:thin:@169.54.208.180:1521/prodcatalog1pdb"; 
+	      
+        //properties for creating connection to Oracle database
+        Properties props = new Properties();
+        props.setProperty("user", "nrg_prd");
+        props.setProperty("password", "admin1");
+      
+        //creating connection to Oracle database using JDBC
+        Connection conn = DriverManager.getConnection(url,props);
+
+        String sql ="select ID from USERS where USER_EMAIL = '"+customerUsername+"'";
+
+        //creating PreparedStatement object to execute query
+        PreparedStatement preStatement = conn.prepareStatement(sql);
+    
+        ResultSet result = preStatement.executeQuery();
+        
+        if(result.next()){
+        	exist = true;
+        }
+		
+		return exist;
+	}
+	
+	public boolean ifAPIRole(String customerUsername) throws SQLException{
+		boolean role = false;
+		
+		String url = "jdbc:oracle:thin:@169.54.208.180:1521/prodcatalog1pdb"; 
+	      
+        //properties for creating connection to Oracle database
+        Properties props = new Properties();
+        props.setProperty("user", "nrg_prd");
+        props.setProperty("password", "admin1");
+      
+        //creating connection to Oracle database using JDBC
+        Connection conn = DriverManager.getConnection(url,props);
+
+        String sql ="select USER_ROLE_ID from USERS where USER_EMAIL = '"+customerUsername+"'";
+
+        //creating PreparedStatement object to execute query
+        PreparedStatement preStatement = conn.prepareStatement(sql);
+    
+        ResultSet result = preStatement.executeQuery();
+		result.next();
+		int role_id = result.getInt("USER_ROLE_ID");
+		
+		if(role_id == 4){
+			role = true;
+		}
+		
+		return role;
+	}
+	
 	public Customer readCustomer(String customerUsername)throws IOException, URISyntaxException, SQLException{
 		Customer customer = new Customer();
 		customer.setUsername(customerUsername);
