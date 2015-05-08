@@ -24,8 +24,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class WebQueryController {
         //@Autowired
         //private IPersonService personService;
-	@RequestMapping(value={"/api/web-query"}, method=RequestMethod.POST, produces="text/plain")
-    public @ResponseBody String onSubmit(HttpServletRequest request, HttpServletResponse response) throws JSONException, IOException, InterruptedException 
+	@RequestMapping(value={"/api/web-query"}, method=RequestMethod.POST)
+    public @ResponseBody String onSubmit(HttpServletRequest request) throws JSONException, IOException, InterruptedException 
     		 {
                 
                 JSONObject requestFromClient = new JSONObject();

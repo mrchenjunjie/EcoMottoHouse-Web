@@ -265,6 +265,7 @@
 	<finalName>EcoMottoHouse-Web</finalName>
 	<pluginManagement>
 			<plugins>
+			<!-- 
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.1</version>
@@ -302,6 +303,7 @@
 				   <artifactId>appengine-maven-plugin</artifactId>
 				   <version>1.9.17</version>
 				</plugin>
+				 -->
 				<plugin>
 					<groupId>org.eclipse.jetty</groupId>
 					<artifactId>jetty-maven-plugin</artifactId>
@@ -315,3 +317,4 @@
 		</pluginManagement>
 	</build>
 </project>
+
