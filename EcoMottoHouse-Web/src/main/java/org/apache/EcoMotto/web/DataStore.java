@@ -64,11 +64,12 @@ public class DataStore {
         Properties props = new Properties();
         props.setProperty("user", "nrg_prd");
         props.setProperty("password", "admin1");
-      
+        
+        String lowCaseCustomer = customerUsername.toLowerCase();
         //creating connection to Oracle database using JDBC
         Connection conn = DriverManager.getConnection(url,props);
 
-        String sql ="select ID from USERS where USER_EMAIL = '"+customerUsername+"'";
+        String sql ="select ID from USERS where USER_EMAIL = '"+lowCaseCustomer+"'";
 
         //creating PreparedStatement object to execute query
         PreparedStatement preStatement = conn.prepareStatement(sql);
@@ -92,10 +93,11 @@ public class DataStore {
         props.setProperty("user", "nrg_prd");
         props.setProperty("password", "admin1");
       
+        String lowCaseCustomer = customerUsername.toLowerCase();
         //creating connection to Oracle database using JDBC
         Connection conn = DriverManager.getConnection(url,props);
-
-        String sql ="select USER_ROLE_ID from USERS where USER_EMAIL = '"+customerUsername+"'";
+        
+        String sql ="select USER_ROLE_ID from USERS where USER_EMAIL = '"+lowCaseCustomer+"'";
 
         //creating PreparedStatement object to execute query
         PreparedStatement preStatement = conn.prepareStatement(sql);
@@ -122,10 +124,11 @@ public class DataStore {
         props.setProperty("user", "nrg_prd");
         props.setProperty("password", "admin1");
       
+        String lowCaseCustomer = customerUsername.toLowerCase();
         //creating connection to Oracle database using JDBC
         Connection conn = DriverManager.getConnection(url,props);
 
-        String sql ="select USER_PASSWORD from USERS where USER_EMAIL = '"+customerUsername+"'";
+        String sql ="select USER_PASSWORD from USERS where USER_EMAIL = '"+lowCaseCustomer+"'";
 
         //creating PreparedStatement object to execute query
         PreparedStatement preStatement = conn.prepareStatement(sql);
@@ -163,9 +166,9 @@ public class DataStore {
         String[] dataTypes = new String[numberofColumns];
         for(int i = 0; i < numberofColumns; i++){
         	columnNames[i] = rsMeta.getColumnName(i+1);
-        	System.out.println("Column Name: "+columnNames[i]);
+        	//System.out.println("Column Name: "+columnNames[i]);
         	dataTypes[i] = rsMeta.getColumnClassName(i+1);
-        	System.out.println("Column Data Type: "+dataTypes[i]);
+        	//System.out.println("Column Data Type: "+dataTypes[i]);
         }
         //String columnName = rsMeta.getColumnName(1);
         //System.out.println("Column Name: "+columnName);
@@ -180,11 +183,11 @@ public class DataStore {
         		switch(dataTypes[j]){
 	        		case "java.lang.String":
 	        			tempResult.put(columnNames[j], result.getString(columnNames[j]));
-	        			System.out.println("From database get String: "+result.getString(columnNames[j]));
+	        			//System.out.println("From database get String: "+result.getString(columnNames[j]));
 	        			break;
 	        		case "java.math.BigDecimal":
 	        			tempResult.put(columnNames[j], result.getInt(columnNames[j]));
-	        			System.out.println("From database get Integer: "+result.getString(columnNames[j]));
+	        			//System.out.println("From database get Integer: "+result.getString(columnNames[j]));
 	        			break;
 	        		default:
 	        			break;
@@ -199,4 +202,59 @@ public class DataStore {
         }		
 		return finalResult;
 	}
+	
+	public JSONObject zipQuery(JSONObject zip) throws SQLException, JSONException{
+		//JSONObject queryResult = new JSONObject();
+		JSONObject finalResult = new JSONObject();
+		
+		String url = "jdbc:oracle:thin:@169.54.208.180:1521/prodcatalog1pdb"; 
+	      
+        //properties for creating connection to Oracle database
+        Properties props = new Properties();
+        props.setProperty("user", "nrg_prd");
+        props.setProperty("password", "admin1");
+      
+        //creating connection to Oracle database using JDBC
+        Connection conn = DriverManager.getConnection(url,props);
+        int zipCount = 1;
+        int count = 1;
+        
+        while(zip.has("zip"+Integer.toString(zipCount))){
+        	String query = "select * from NRG_PRODUCT where ZIPCODE = '"+zip.getString("zip"+Integer.toString(zipCount))+"'";
+        	
+        	PreparedStatement preStatement = conn.prepareStatement(query);
+            
+            ResultSet result = preStatement.executeQuery();
+            ResultSetMetaData rsMeta = result.getMetaData();
+            int numberofColumns = rsMeta.getColumnCount();
+            String[] columnNames = new String[numberofColumns];
+            String[] dataTypes = new String[numberofColumns];
+            for(int i = 0; i < numberofColumns; i++){
+            	columnNames[i] = rsMeta.getColumnName(i+1);
+            	dataTypes[i] = rsMeta.getColumnClassName(i+1);
+            }
+            
+            while(result.next()){
+            	JSONObject tempResult = new JSONObject();
+            	for(int j=0; j<numberofColumns; j++){
+            		switch(dataTypes[j]){
+    	        		case "java.lang.String":
+    	        			tempResult.put(columnNames[j], result.getString(columnNames[j]));
+    	        			break;
+    	        		case "java.math.BigDecimal":
+    	        			tempResult.put(columnNames[j], result.getInt(columnNames[j]));
+    	        			break;
+    	        		default:
+    	        			break;
+            		}
+            		
+            	}
+            	finalResult.put("result"+Integer.toString(count), tempResult);
+        		count++;        	
+            }
+        }
+        		
+		return finalResult;
+	}
 }
+

@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.apache.EcoMottoHouse-Web</groupId>
 	<artifactId>EcoMotto</artifactId>
-	<packaging>pom</packaging>
+	<packaging>war</packaging>
 	<name>EcoMotto Main</name>
 	<version>1.0.0-SNAPSHOT</version>
 	<url>http://maven.apache.org</url>
@@ -265,6 +265,14 @@
 	<finalName>EcoMottoHouse-Web</finalName>
 	<pluginManagement>
 			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
 			<!-- 
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
