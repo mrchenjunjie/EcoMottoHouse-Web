@@ -220,8 +220,24 @@ public class DataStore {
         int count = 1;
         
         while(zip.has("zip"+Integer.toString(zipCount))){
-        	String query = "select * from NRG_PRODUCT where ZIPCODE = '"+zip.getString("zip"+Integer.toString(zipCount))+"'";
         	
+        	String query = "select p.*, z.zipcode5"
+        					+" from"
+        					+" nrg_product p,"
+        					+" product_mkt_bu_time pm,"
+        					+" utility u,"
+        					+" utility_zipcode uz,"
+        					+" zipcode z"
+        					+" where"
+        					+" p.product_id=pm.product_id"
+        					+" and pm.geo_id=u.id"
+        					+" and u.id=uz.utility_id"
+        					+" and uz.zipcode_id=z.id"
+        					+" and pm.offer_start<= sysdate"
+        					+" and (pm.offer_end = null or pm.offer_end> sysdate)"
+        					+" and z.zipcode5 in ('"+zip.getString("zip"+Integer.toString(zipCount))+"')";
+        	//String query = "select * from NRG_PRODUCT where ZIPCODE = '"+zip.getString("zip"+Integer.toString(zipCount))+"'";
+        	//System.out.println("Query to DB: "+query);
         	PreparedStatement preStatement = conn.prepareStatement(query);
             
             ResultSet result = preStatement.executeQuery();
@@ -247,11 +263,13 @@ public class DataStore {
     	        		default:
     	        			break;
             		}
-            		
             	}
             	finalResult.put("result"+Integer.toString(count), tempResult);
         		count++;        	
             }
+            zipCount++;
+            preStatement.close();
+            result.close();
         }
         		
 		return finalResult;
