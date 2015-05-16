@@ -1,0 +1,631 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EcoMotto Main 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> jetty-maven-plugin:9.2.2.v20140723:run (default-cli) @ EcoMotto >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ EcoMotto ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ EcoMotto ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:testResources (default-testResources) @ EcoMotto ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ EcoMotto ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< jetty-maven-plugin:9.2.2.v20140723:run (default-cli) @ EcoMotto <<<
+[INFO] 
+[INFO] --- jetty-maven-plugin:9.2.2.v20140723:run (default-cli) @ EcoMotto ---
+2015-05-10 05:57:29.913:INFO::main: Logging initialized @8165ms
+[INFO] Configuring Jetty for project: EcoMotto Main
+[INFO] webAppSourceDirectory not set. Trying src/main/webapp
+[INFO] Reload Mechanic: automatic
+[INFO] Classes = /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/target/classes
+[INFO] Context path = /
+[INFO] Tmp directory = /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/target/tmp
+[INFO] Web defaults = org/eclipse/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] web.xml file = file:/home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp/WEB-INF/web.xml
+[INFO] Webapp directory = /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp
+2015-05-10 05:57:30.223:INFO:oejs.Server:main: jetty-9.2.2.v20140723
+2015-05-10 05:57:41.096:INFO:/:main: Spring WebApplicationInitializers detected on classpath: [org.apache.EcoMotto.web.config.EcoMottoWebInitializer@3b2c8247]
+2015-05-10 05:57:41.381:INFO:/:main: Initializing Spring FrameworkServlet 'dispatcher'
+15/05/10 05:57:41 INFO servlet.DispatcherServlet: FrameworkServlet 'dispatcher': initialization started
+15/05/10 05:57:41 INFO support.AnnotationConfigWebApplicationContext: Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Sun May 10 05:57:41 UTC 2015]; root of context hierarchy
+15/05/10 05:57:41 INFO support.AnnotationConfigWebApplicationContext: Registering annotated classes: [class org.apache.EcoMotto.web.config.EcoMottoWebConfig]
+15/05/10 05:57:41 INFO annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+15/05/10 05:57:42 INFO handler.SimpleUrlHandlerMapping: Mapped URL path [/api/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15/05/10 05:57:42 INFO handler.SimpleUrlHandlerMapping: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
+15/05/10 05:57:42 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/web-query],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.WebQueryController.onSubmit(javax.servlet.http.HttpServletRequest) throws org.json.JSONException,java.io.IOException,java.lang.InterruptedException
+15/05/10 05:57:42 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.LoginController.onSubmit(java.lang.String,java.lang.String,org.springframework.ui.Model) throws java.io.IOException,java.net.URISyntaxException,org.json.JSONException,java.sql.SQLException
+15/05/10 05:57:42 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.RegisterController.onSubmit(java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+15/05/10 05:57:42 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.IndexController.index()
+15/05/10 05:57:42 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/query],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.QueryController.onSubmit(java.lang.String,org.springframework.ui.Model) throws java.io.IOException,java.net.URISyntaxException,org.json.JSONException,java.sql.SQLException,java.lang.InterruptedException
+15/05/10 05:57:42 INFO servlet.DispatcherServlet: FrameworkServlet 'dispatcher': initialization completed in 1382 ms
+2015-05-10 05:57:42.764:INFO:oejsh.ContextHandler:main: Started o.e.j.m.p.JettyWebAppContext@643af383{/,file:/home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp/,AVAILABLE}{file:/home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp/}
+2015-05-10 05:57:42.770:WARN:oejsh.RequestLogHandler:main: !RequestLog
+2015-05-10 05:57:42.794:INFO:oejs.ServerConnector:main: Started ServerConnector@6331a4f{HTTP/1.1}{0.0.0.0:8899}
+2015-05-10 05:57:42.794:INFO:oejs.Server:main: Started @21059ms
+[INFO] Started Jetty Server
+15/05/10 05:57:43 INFO thymeleaf.TemplateEngine: [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+15/05/10 05:57:43 INFO templateresolver.AbstractTemplateResolver: [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ServletContextTemplateResolver
+15/05/10 05:57:43 INFO templateresolver.AbstractTemplateResolver: [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+15/05/10 05:57:43 INFO messageresolver.AbstractMessageResolver: [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+15/05/10 05:57:43 INFO messageresolver.AbstractMessageResolver: [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+15/05/10 05:57:43 INFO TemplateEngine.CONFIG: [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.templateresolver.ServletContextTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+15/05/10 05:57:43 INFO thymeleaf.TemplateEngine: [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+After user validation, start querying!
+Column Name: BU_ID
+Column Data Type: java.math.BigDecimal
+Column Name: BU_NAME
+Column Data Type: java.lang.String
+Column Name: BU_ABBR
+Column Data Type: java.lang.String
+From database get Integer: 1
+From database get String: Large Business
+From database get String: LGBUS
+From database get Integer: 2
+From database get String: Small Business
+From database get String: SMBUS
+From database get Integer: 3
+From database get String: NRG Renew
+From database get String: RENEW
+From database get Integer: 4
+From database get String: NRG Home
+From database get String: HOME
+Result from database: {"result3":{"BU_ID":3,"BU_ABBR":"RENEW","BU_NAME":"NRG Renew"},"result4":{"BU_ID":4,"BU_ABBR":"HOME","BU_NAME":"NRG Home"},"result1":{"BU_ID":1,"BU_ABBR":"LGBUS","BU_NAME":"Large Business"},"result2":{"BU_ID":2,"BU_ABBR":"SMBUS","BU_NAME":"Small Business"}}
+After user validation, start querying!
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:863)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1153)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1275)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3576)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3620)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1491)
+	at org.apache.EcoMotto.web.DataStore.selectQuery(DataStore.java:159)
+	at org.apache.EcoMotto.web.QueryThreadController.run(QueryThreadController.java:33)
+After user validation, start querying!
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:863)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1153)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1275)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3576)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3620)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1491)
+	at org.apache.EcoMotto.web.DataStore.selectQuery(DataStore.java:159)
+	at org.apache.EcoMotto.web.QueryThreadController.run(QueryThreadController.java:33)
+After user validation, start querying!
+java.sql.SQLSyntaxErrorException: ORA-00904: "ID": invalid identifier
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:863)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1153)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1275)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3576)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3620)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1491)
+	at org.apache.EcoMotto.web.DataStore.selectQuery(DataStore.java:159)
+	at org.apache.EcoMotto.web.QueryThreadController.run(QueryThreadController.java:33)
+After user validation, start querying!
+Column Name: BU_ID
+Column Data Type: java.math.BigDecimal
+From database get Integer: 1
+From database get Integer: 2
+From database get Integer: 3
+From database get Integer: 4
+Result from database: {"result3":{"BU_ID":3},"result4":{"BU_ID":4},"result1":{"BU_ID":1},"result2":{"BU_ID":2}}
+After user validation, start querying!
+Column Name: POWER_MARKET
+Column Data Type: java.lang.String
+Column Name: ZONE
+Column Data Type: java.lang.String
+Column Name: ZONE_ABBR
+Column Data Type: java.lang.String
+From database get String: California
+From database get String: NP15
+From database get String: NP15
+From database get String: California
+From database get String: ZP15
+From database get String: ZP15
+From database get String: California
+From database get String: SP15
+From database get String: SP15
+From database get String: Electric Reliability Council of Texas
+From database get String: Houston
+From database get String: Houston
+From database get String: Electric Reliability Council of Texas
+From database get String: North
+From database get String: North
+From database get String: Electric Reliability Council of Texas
+From database get String: South
+From database get String: South
+From database get String: Electric Reliability Council of Texas
+From database get String: West
+From database get String: West
+From database get String: Midcontinent
+From database get String: Indiana_hub
+From database get String: Indiana
+From database get String: Midcontinent
+From database get String: Illinois_hub
+From database get String: Illinois
+From database get String: Midcontinent
+From database get String: Michigan_hub
+From database get String: Michigan
+From database get String: Midcontinent
+From database get String: Minnesota_hub
+From database get String: Minnesota
+From database get String: New England
+From database get String: Connecticut
+From database get String: Connecticut
+From database get String: New England
+From database get String:  Maine
+From database get String:  Maine
+From database get String: New England
+From database get String:  New Hampshire
+From database get String:  New Hampshire
+From database get String: New England
+From database get String:  Rhode Island
+From database get String:  Rhode Island
+From database get String: New England
+From database get String:  Vermont
+From database get String:  Vermont
+From database get String: New England
+From database get String:  Northeastern Massachusetts/Boston
+From database get String: NEMA
+From database get String: New England
+From database get String:  Southeastern Massachusetts
+From database get String: SEMA
+From database get String: New England
+From database get String: Western/Central Massachusetts
+From database get String: WCMA
+From database get String: Northwest
+From database get String: California-Oregon Border
+From database get String: COB
+From database get String: Northwest
+From database get String: Mid-Columbia
+From database get String: MidC
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String: Allegheny Power Systems
+From database get String: APS
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  American Electric Power
+From database get String: AEP
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  Atlantic Electric Power Company Inc
+From database get String: AECO
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  Baltimore Gas and Electric Company
+From database get String: BGE
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  ComEd
+From database get String: ComEd
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  Dayton Power and Light Company
+From database get String: DAY
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  Delmarva Power and Light Company
+From database get String: DPL
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  Dominion
+From database get String: DOM
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  Duquesne Light
+From database get String: DUQ
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  Jersey Central Power and Light Company
+From database get String: JCPL
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  Metropolitan Edison Company
+From database get String: METED
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  PPL Electric Utilities
+From database get String: PPL
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  PECO Energy
+From database get String: PECO
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  Pennsylvania Electric Company
+From database get String: PENELEC
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  Potomac Electric Power Company
+From database get String: PEPCO
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String:  Public Service Electric and Gas Company
+From database get String: PSEG
+From database get String: Pennsylvania-Jersey-Maryland
+From database get String: Rockland Electric Company
+From database get String: RECO
+From database get String: Southeast
+From database get String: Entergy_hub
+From database get String: Entergy
+From database get String: Southeast
+From database get String: Southern_hub
+From database get String: Southern
+From database get String: Southeast
+From database get String: TVA_hub
+From database get String: TVA
+From database get String: Southwest
+From database get String: FourCorners_hub
+From database get String: FourCorners
+From database get String: Southwest
+From database get String: Mead_hub
+From database get String: Mead
+From database get String: Southwest
+From database get String: PaloVerde_hub
+From database get String: PaloVerde
+From database get String: Southwest Power Pool
+From database get String: American Electric Power West, formerly CSWS
+From database get String: AEPW
+From database get String: Southwest Power Pool
+From database get String:  Empire District Electric
+From database get String: EDE
+From database get String: Southwest Power Pool
+From database get String:  Independence Power & Light
+From database get String: INDN
+From database get String: Southwest Power Pool
+From database get String:  Kansas City Power & Light 
+From database get String: KCPL
+From database get String: Southwest Power Pool
+From database get String:  Louisiana Energy & Power Authority
+From database get String: LEPA
+From database get String: Southwest Power Pool
+From database get String:  OG+E Electric Services
+From database get String: OKGE
+From database get String: Southwest Power Pool
+From database get String:  Southwestern Power Administration
+From database get String: SPA
+From database get String: Southwest Power Pool
+From database get String:  Westar Energy  
+From database get String: WR
+From database get String: Southwest Power Pool
+From database get String:  CLECO Power
+From database get String: CLEC
+From database get String: Southwest Power Pool
+From database get String:  Grand River Dam Authority
+From database get String: GRDA
+From database get String: Southwest Power Pool
+From database get String:  Kansas City Board of Public Utilities
+From database get String: KACY
+From database get String: Southwest Power Pool
+From database get String:  City of Lafayette, Louisiana
+From database get String: LAFA
+From database get String: Southwest Power Pool
+From database get String:  KCP&L Greater Missouri Operations
+From database get String: MPS
+From database get String: Southwest Power Pool
+From database get String:  Sunflower Electric
+From database get String: SECI
+From database get String: Southwest Power Pool
+From database get String:  Southwestern Public Service
+From database get String: SPS
+From database get String: Southwest Power Pool
+From database get String:  Western Farmers Electric Coop
+From database get String: WFEC
+From database get String: Yew York
+From database get String: Capital
+From database get String: Zone F
+From database get String: Yew York
+From database get String:  Central
+From database get String: Zone C
+From database get String: Yew York
+From database get String:  Dunwoodie
+From database get String: Zone I
+From database get String: Yew York
+From database get String:  Genesee
+From database get String: Zone B
+From database get String: Yew York
+From database get String:  Hudson Valley
+From database get String: Zone G
+From database get String: Yew York
+From database get String:  Long Island
+From database get String: Zone K
+From database get String: Yew York
+From database get String:  Millwood
+From database get String: Zone H
+From database get String: Yew York
+From database get String:  Mohawk Valley
+From database get String: Zone E
+From database get String: Yew York
+From database get String:  New York City
+From database get String: Zone J
+From database get String: Yew York
+From database get String:  North
+From database get String: Zone D
+From database get String: Yew York
+From database get String:  West
+From database get String: Zone A
+Result from database: {"result39":{"ZONE_ABBR":"Entergy","ZONE":"Entergy_hub","POWER_MARKET":"Southeast"},"result38":{"ZONE_ABBR":"RECO","ZONE":"Rockland Electric Company","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result37":{"ZONE_ABBR":"PSEG","ZONE":" Public Service Electric and Gas Company","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result36":{"ZONE_ABBR":"PEPCO","ZONE":" Potomac Electric Power Company","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result41":{"ZONE_ABBR":"TVA","ZONE":"TVA_hub","POWER_MARKET":"Southeast"},"result42":{"ZONE_ABBR":"FourCorners","ZONE":"FourCorners_hub","POWER_MARKET":"Southwest"},"result40":{"ZONE_ABBR":"Southern","ZONE":"Southern_hub","POWER_MARKET":"Southeast"},"result45":{"ZONE_ABBR":"AEPW","ZONE":"American Electric Power West, formerly CSWS","POWER_MARKET":"Southwest Power Pool"},"result46":{"ZONE_ABBR":"EDE","ZONE":" Empire District Electric","POWER_MARKET":"Southwest Power Pool"},"result43":{"ZONE_ABBR":"Mead","ZONE":"Mead_hub","POWER_MARKET":"Southwest"},"result44":{"ZONE_ABBR":"PaloVerde","ZONE":"PaloVerde_hub","POWER_MARKET":"Southwest"},"result48":{"ZONE_ABBR":"KCPL","ZONE":" Kansas City Power & Light ","POWER_MARKET":"Southwest Power Pool"},"result47":{"ZONE_ABBR":"INDN","ZONE":" Independence Power & Light","POWER_MARKET":"Southwest Power Pool"},"result49":{"ZONE_ABBR":"LEPA","ZONE":" Louisiana Energy & Power Authority","POWER_MARKET":"Southwest Power Pool"},"result13":{"ZONE_ABBR":" Maine","ZONE":" Maine","POWER_MARKET":"New England"},"result12":{"ZONE_ABBR":"Connecticut","ZONE":"Connecticut","POWER_MARKET":"New England"},"result11":{"ZONE_ABBR":"Minnesota","ZONE":"Minnesota_hub","POWER_MARKET":"Midcontinent"},"result10":{"ZONE_ABBR":"Michigan","ZONE":"Michigan_hub","POWER_MARKET":"Midcontinent"},"result50":{"ZONE_ABBR":"OKGE","ZONE":" OG+E Electric Services","POWER_MARKET":"Southwest Power Pool"},"result51":{"ZONE_ABBR":"SPA","ZONE":" Southwestern Power Administration","POWER_MARKET":"Southwest Power Pool"},"result52":{"ZONE_ABBR":"WR","ZONE":" Westar Energy  ","POWER_MARKET":"Southwest Power Pool"},"result53":{"ZONE_ABBR":"CLEC","ZONE":" CLECO Power","POWER_MARKET":"Southwest Power Pool"},"result54":{"ZONE_ABBR":"GRDA","ZONE":" Grand River Dam Authority","POWER_MARKET":"Southwest Power Pool"},"result55":{"ZONE_ABBR":"KACY","ZONE":" Kansas City Board of Public Utilities","POWER_MARKET":"Southwest Power Pool"},"result56":{"ZONE_ABBR":"LAFA","ZONE":" City of Lafayette, Louisiana","POWER_MARKET":"Southwest Power Pool"},"result57":{"ZONE_ABBR":"MPS","ZONE":" KCP&L Greater Missouri Operations","POWER_MARKET":"Southwest Power Pool"},"result58":{"ZONE_ABBR":"SECI","ZONE":" Sunflower Electric","POWER_MARKET":"Southwest Power Pool"},"result59":{"ZONE_ABBR":"SPS","ZONE":" Southwestern Public Service","POWER_MARKET":"Southwest Power Pool"},"result19":{"ZONE_ABBR":"WCMA","ZONE":"Western/Central Massachusetts","POWER_MARKET":"New England"},"result18":{"ZONE_ABBR":"SEMA","ZONE":" Southeastern Massachusetts","POWER_MARKET":"New England"},"result17":{"ZONE_ABBR":"NEMA","ZONE":" Northeastern Massachusetts/Boston","POWER_MARKET":"New England"},"result16":{"ZONE_ABBR":" Vermont","ZONE":" Vermont","POWER_MARKET":"New England"},"result15":{"ZONE_ABBR":" Rhode Island","ZONE":" Rhode Island","POWER_MARKET":"New England"},"result14":{"ZONE_ABBR":" New Hampshire","ZONE":" New Hampshire","POWER_MARKET":"New England"},"result60":{"ZONE_ABBR":"WFEC","ZONE":" Western Farmers Electric Coop","POWER_MARKET":"Southwest Power Pool"},"result23":{"ZONE_ABBR":"AEP","ZONE":" American Electric Power","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result3":{"ZONE_ABBR":"SP15","ZONE":"SP15","POWER_MARKET":"California"},"result24":{"ZONE_ABBR":"AECO","ZONE":" Atlantic Electric Power Company Inc","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result4":{"ZONE_ABBR":"Houston","ZONE":"Houston","POWER_MARKET":"Electric Reliability Council of Texas"},"result21":{"ZONE_ABBR":"MidC","ZONE":"Mid-Columbia","POWER_MARKET":"Northwest"},"result1":{"ZONE_ABBR":"NP15","ZONE":"NP15","POWER_MARKET":"California"},"result22":{"ZONE_ABBR":"APS","ZONE":"Allegheny Power Systems","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result2":{"ZONE_ABBR":"ZP15","ZONE":"ZP15","POWER_MARKET":"California"},"result20":{"ZONE_ABBR":"COB","ZONE":"California-Oregon Border","POWER_MARKET":"Northwest"},"result68":{"ZONE_ABBR":"Zone E","ZONE":" Mohawk Valley","POWER_MARKET":"Yew York"},"result67":{"ZONE_ABBR":"Zone H","ZONE":" Millwood","POWER_MARKET":"Yew York"},"result66":{"ZONE_ABBR":"Zone K","ZONE":" Long Island","POWER_MARKET":"Yew York"},"result9":{"ZONE_ABBR":"Illinois","ZONE":"Illinois_hub","POWER_MARKET":"Midcontinent"},"result65":{"ZONE_ABBR":"Zone G","ZONE":" Hudson Valley","POWER_MARKET":"Yew York"},"result64":{"ZONE_ABBR":"Zone B","ZONE":" Genesee","POWER_MARKET":"Yew York"},"result7":{"ZONE_ABBR":"West","ZONE":"West","POWER_MARKET":"Electric Reliability Council of Texas"},"result63":{"ZONE_ABBR":"Zone I","ZONE":" Dunwoodie","POWER_MARKET":"Yew York"},"result8":{"ZONE_ABBR":"Indiana","ZONE":"Indiana_hub","POWER_MARKET":"Midcontinent"},"result62":{"ZONE_ABBR":"Zone C","ZONE":" Central","POWER_MARKET":"Yew York"},"result5":{"ZONE_ABBR":"North","ZONE":"North","POWER_MARKET":"Electric Reliability Council of Texas"},"result61":{"ZONE_ABBR":"Zone F","ZONE":"Capital","POWER_MARKET":"Yew York"},"result6":{"ZONE_ABBR":"South","ZONE":"South","POWER_MARKET":"Electric Reliability Council of Texas"},"result69":{"ZONE_ABBR":"Zone J","ZONE":" New York City","POWER_MARKET":"Yew York"},"result29":{"ZONE_ABBR":"DOM","ZONE":" Dominion","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result26":{"ZONE_ABBR":"ComEd","ZONE":" ComEd","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result25":{"ZONE_ABBR":"BGE","ZONE":" Baltimore Gas and Electric Company","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result28":{"ZONE_ABBR":"DPL","ZONE":" Delmarva Power and Light Company","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result27":{"ZONE_ABBR":"DAY","ZONE":" Dayton Power and Light Company","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result32":{"ZONE_ABBR":"METED","ZONE":" Metropolitan Edison Company","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result33":{"ZONE_ABBR":"PPL","ZONE":" PPL Electric Utilities","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result71":{"ZONE_ABBR":"Zone A","ZONE":" West","POWER_MARKET":"Yew York"},"result34":{"ZONE_ABBR":"PECO","ZONE":" PECO Energy","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result70":{"ZONE_ABBR":"Zone D","ZONE":" North","POWER_MARKET":"Yew York"},"result35":{"ZONE_ABBR":"PENELEC","ZONE":" Pennsylvania Electric Company","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result30":{"ZONE_ABBR":"DUQ","ZONE":" Duquesne Light","POWER_MARKET":"Pennsylvania-Jersey-Maryland"},"result31":{"ZONE_ABBR":"JCPL","ZONE":" Jersey Central Power and Light Company","POWER_MARKET":"Pennsylvania-Jersey-Maryland"}}
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EcoMotto Main 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> jetty-maven-plugin:9.2.2.v20140723:run (default-cli) @ EcoMotto >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ EcoMotto ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ EcoMotto ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:testResources (default-testResources) @ EcoMotto ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ EcoMotto ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< jetty-maven-plugin:9.2.2.v20140723:run (default-cli) @ EcoMotto <<<
+[INFO] 
+[INFO] --- jetty-maven-plugin:9.2.2.v20140723:run (default-cli) @ EcoMotto ---
+2015-05-12 03:49:00.095:INFO::main: Logging initialized @9396ms
+[INFO] Configuring Jetty for project: EcoMotto Main
+[INFO] webAppSourceDirectory not set. Trying src/main/webapp
+[INFO] Reload Mechanic: automatic
+[INFO] Classes = /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/target/classes
+[INFO] Context path = /
+[INFO] Tmp directory = /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/target/tmp
+[INFO] Web defaults = org/eclipse/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] web.xml file = file:/home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp/WEB-INF/web.xml
+[INFO] Webapp directory = /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp
+2015-05-12 03:49:00.345:INFO:oejs.Server:main: jetty-9.2.2.v20140723
+2015-05-12 03:49:10.724:INFO:/:main: Spring WebApplicationInitializers detected on classpath: [org.apache.EcoMotto.web.config.EcoMottoWebInitializer@265945ac]
+2015-05-12 03:49:11.010:INFO:/:main: Initializing Spring FrameworkServlet 'dispatcher'
+15/05/12 03:49:11 INFO servlet.DispatcherServlet: FrameworkServlet 'dispatcher': initialization started
+15/05/12 03:49:11 INFO support.AnnotationConfigWebApplicationContext: Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Tue May 12 03:49:11 UTC 2015]; root of context hierarchy
+15/05/12 03:49:11 INFO support.AnnotationConfigWebApplicationContext: Registering annotated classes: [class org.apache.EcoMotto.web.config.EcoMottoWebConfig]
+15/05/12 03:49:11 INFO annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+15/05/12 03:49:12 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/web-query],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.WebQueryController.onSubmit(javax.servlet.http.HttpServletRequest) throws org.json.JSONException,java.io.IOException,java.lang.InterruptedException
+15/05/12 03:49:12 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.LoginController.onSubmit(java.lang.String,java.lang.String,org.springframework.ui.Model) throws java.io.IOException,java.net.URISyntaxException,org.json.JSONException,java.sql.SQLException
+15/05/12 03:49:12 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/zpiQuery],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.ZipQueryController.onSubmit(java.lang.String,org.springframework.ui.Model) throws java.io.IOException,java.net.URISyntaxException,org.json.JSONException,java.sql.SQLException,java.lang.InterruptedException
+15/05/12 03:49:12 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.RegisterController.onSubmit(java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+15/05/12 03:49:12 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.IndexController.index()
+15/05/12 03:49:12 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/query],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.QueryController.onSubmit(java.lang.String,org.springframework.ui.Model) throws java.io.IOException,java.net.URISyntaxException,org.json.JSONException,java.sql.SQLException,java.lang.InterruptedException
+15/05/12 03:49:12 INFO handler.SimpleUrlHandlerMapping: Mapped URL path [/api/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15/05/12 03:49:12 INFO handler.SimpleUrlHandlerMapping: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
+15/05/12 03:49:12 INFO servlet.DispatcherServlet: FrameworkServlet 'dispatcher': initialization completed in 1371 ms
+2015-05-12 03:49:12.383:INFO:oejsh.ContextHandler:main: Started o.e.j.m.p.JettyWebAppContext@688dbd21{/,file:/home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp/,AVAILABLE}{file:/home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp/}
+2015-05-12 03:49:12.388:WARN:oejsh.RequestLogHandler:main: !RequestLog
+2015-05-12 03:49:12.412:INFO:oejs.ServerConnector:main: Started ServerConnector@7e438460{HTTP/1.1}{0.0.0.0:8899}
+2015-05-12 03:49:12.412:INFO:oejs.Server:main: Started @21724ms
+[INFO] Started Jetty Server
+15/05/12 03:49:23 INFO thymeleaf.TemplateEngine: [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+15/05/12 03:49:24 INFO templateresolver.AbstractTemplateResolver: [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ServletContextTemplateResolver
+15/05/12 03:49:24 INFO templateresolver.AbstractTemplateResolver: [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+15/05/12 03:49:24 INFO messageresolver.AbstractMessageResolver: [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+15/05/12 03:49:24 INFO messageresolver.AbstractMessageResolver: [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+15/05/12 03:49:24 INFO TemplateEngine.CONFIG: [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.templateresolver.ServletContextTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+15/05/12 03:49:24 INFO thymeleaf.TemplateEngine: [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+After user validation, start querying!
+Result from database: {"result3":{"BU_ID":3,"BU_ABBR":"RENEW","BU_NAME":"NRG Renew"},"result4":{"BU_ID":4,"BU_ABBR":"HOME","BU_NAME":"NRG Home"},"result1":{"BU_ID":1,"BU_ABBR":"LGBUS","BU_NAME":"Large Business"},"result2":{"BU_ID":2,"BU_ABBR":"SMBUS","BU_NAME":"Small Business"}}
+After user validation, start querying!
+Result from database: {"result1":{"SUBTYPE3":"Capacity","PRODUCT_ID":14,"SUBTYPE2":"Capacity","SUBTYPE4":"Capacity","SUBTYPE1":"Capacity","TYPE1":"Demand Response","PRODUCT":"Emergency Demand Response","ZIPCODE5":"93514"}}
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EcoMotto Main 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> jetty-maven-plugin:9.2.2.v20140723:run (default-cli) @ EcoMotto >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ EcoMotto ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ EcoMotto ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:testResources (default-testResources) @ EcoMotto ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ EcoMotto ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< jetty-maven-plugin:9.2.2.v20140723:run (default-cli) @ EcoMotto <<<
+[INFO] 
+[INFO] --- jetty-maven-plugin:9.2.2.v20140723:run (default-cli) @ EcoMotto ---
+2015-05-13 03:26:15.397:INFO::main: Logging initialized @9062ms
+[INFO] Configuring Jetty for project: EcoMotto Main
+[INFO] webAppSourceDirectory not set. Trying src/main/webapp
+[INFO] Reload Mechanic: automatic
+[INFO] Classes = /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/target/classes
+[INFO] Context path = /
+[INFO] Tmp directory = /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/target/tmp
+[INFO] Web defaults = org/eclipse/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] web.xml file = file:/home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp/WEB-INF/web.xml
+[INFO] Webapp directory = /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp
+2015-05-13 03:26:15.671:INFO:oejs.Server:main: jetty-9.2.2.v20140723
+2015-05-13 03:26:26.263:INFO:/:main: Spring WebApplicationInitializers detected on classpath: [org.apache.EcoMotto.web.config.EcoMottoWebInitializer@4f5ebe9d]
+2015-05-13 03:26:26.478:INFO:/:main: Initializing Spring FrameworkServlet 'dispatcher'
+15/05/13 03:26:26 INFO servlet.DispatcherServlet: FrameworkServlet 'dispatcher': initialization started
+15/05/13 03:26:26 INFO support.AnnotationConfigWebApplicationContext: Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed May 13 03:26:26 UTC 2015]; root of context hierarchy
+15/05/13 03:26:26 INFO support.AnnotationConfigWebApplicationContext: Registering annotated classes: [class org.apache.EcoMotto.web.config.EcoMottoWebConfig]
+15/05/13 03:26:26 INFO annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+15/05/13 03:26:27 INFO handler.SimpleUrlHandlerMapping: Mapped URL path [/api/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15/05/13 03:26:27 INFO handler.SimpleUrlHandlerMapping: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
+15/05/13 03:26:27 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/web-query],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.WebQueryController.onSubmit(javax.servlet.http.HttpServletRequest) throws org.json.JSONException,java.io.IOException,java.lang.InterruptedException
+15/05/13 03:26:27 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.LoginController.onSubmit(java.lang.String,java.lang.String,org.springframework.ui.Model) throws java.io.IOException,java.net.URISyntaxException,org.json.JSONException,java.sql.SQLException
+15/05/13 03:26:27 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/zpiQuery],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.ZipQueryController.onSubmit(java.lang.String,org.springframework.ui.Model) throws java.io.IOException,java.net.URISyntaxException,org.json.JSONException,java.sql.SQLException,java.lang.InterruptedException
+15/05/13 03:26:27 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/web-zipQuery],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.ZipWebQueryController.onSubmit(javax.servlet.http.HttpServletRequest) throws org.json.JSONException,java.io.IOException,java.lang.InterruptedException
+15/05/13 03:26:27 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.RegisterController.onSubmit(java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+15/05/13 03:26:27 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.IndexController.index()
+15/05/13 03:26:27 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/query],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.QueryController.onSubmit(java.lang.String,org.springframework.ui.Model) throws java.io.IOException,java.net.URISyntaxException,org.json.JSONException,java.sql.SQLException,java.lang.InterruptedException
+15/05/13 03:26:27 INFO servlet.DispatcherServlet: FrameworkServlet 'dispatcher': initialization completed in 1351 ms
+2015-05-13 03:26:27.829:INFO:oejsh.ContextHandler:main: Started o.e.j.m.p.JettyWebAppContext@36d3ec2f{/,file:/home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp/,AVAILABLE}{file:/home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp/}
+2015-05-13 03:26:27.835:WARN:oejsh.RequestLogHandler:main: !RequestLog
+2015-05-13 03:26:27.859:INFO:oejs.ServerConnector:main: Started ServerConnector@6c5a980d{HTTP/1.1}{0.0.0.0:8899}
+2015-05-13 03:26:27.859:INFO:oejs.Server:main: Started @21535ms
+[INFO] Started Jetty Server
+15/05/13 03:26:29 INFO thymeleaf.TemplateEngine: [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+15/05/13 03:26:29 INFO templateresolver.AbstractTemplateResolver: [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ServletContextTemplateResolver
+15/05/13 03:26:29 INFO templateresolver.AbstractTemplateResolver: [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+15/05/13 03:26:29 INFO messageresolver.AbstractMessageResolver: [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+15/05/13 03:26:29 INFO messageresolver.AbstractMessageResolver: [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+15/05/13 03:26:29 INFO TemplateEngine.CONFIG: [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.templateresolver.ServletContextTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+15/05/13 03:26:29 INFO thymeleaf.TemplateEngine: [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+After user validation, start querying!
+java.sql.SQLSyntaxErrorException: ORA-00900: invalid SQL statement
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1010)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1315)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3576)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3620)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1491)
+	at org.apache.EcoMotto.web.DataStore.selectQuery(DataStore.java:162)
+	at org.apache.EcoMotto.web.QueryThreadController.run(QueryThreadController.java:33)
+After user validation, start querying!
+java.sql.SQLSyntaxErrorException: ORA-00900: invalid SQL statement
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1010)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1315)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3576)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3620)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1491)
+	at org.apache.EcoMotto.web.DataStore.selectQuery(DataStore.java:162)
+	at org.apache.EcoMotto.web.QueryThreadController.run(QueryThreadController.java:33)
+After user validation, start querying!
+java.sql.SQLSyntaxErrorException: ORA-00900: invalid SQL statement
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1010)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1315)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3576)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3620)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1491)
+	at org.apache.EcoMotto.web.DataStore.selectQuery(DataStore.java:162)
+	at org.apache.EcoMotto.web.QueryThreadController.run(QueryThreadController.java:33)
+After user validation, start querying!
+java.sql.SQLSyntaxErrorException: ORA-00900: invalid SQL statement
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1010)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1315)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3576)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3620)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1491)
+	at org.apache.EcoMotto.web.DataStore.selectQuery(DataStore.java:162)
+	at org.apache.EcoMotto.web.QueryThreadController.run(QueryThreadController.java:33)
+After user validation, start querying!
+java.sql.SQLSyntaxErrorException: ORA-00900: invalid SQL statement
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1010)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1315)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3576)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3620)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1491)
+	at org.apache.EcoMotto.web.DataStore.selectQuery(DataStore.java:162)
+	at org.apache.EcoMotto.web.QueryThreadController.run(QueryThreadController.java:33)

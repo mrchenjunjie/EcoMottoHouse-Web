@@ -4,6 +4,7 @@ org/apache/EcoMotto/web/DataStore.class
 org/apache/EcoMotto/web/config/EcoMottoWebInitializer.class
 org/apache/EcoMotto/web/IndexController.class
 org/apache/EcoMotto/web/ZipQueryThreadController.class
+org/apache/EcoMotto/web/ZipWebQueryController.class
 org/apache/EcoMotto/web/WebQueryController.class
 org/apache/EcoMotto/web/Customer.class
 org/apache/EcoMotto/web/component/IPersonService.class
