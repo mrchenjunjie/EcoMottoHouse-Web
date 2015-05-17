@@ -255,6 +255,7 @@ public class DataStore {
     	        			break;
             		}
             	}
+            	tempResult.put("ZIPCODE", zip.getString("zip"+Integer.toString(zipCount)));
             	finalResult.put("result"+Integer.toString(count), tempResult);
         		count++;        	
             }
