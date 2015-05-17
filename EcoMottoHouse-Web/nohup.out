@@ -629,3 +629,84 @@ java.sql.SQLSyntaxErrorException: ORA-00900: invalid SQL statement
 	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1491)
 	at org.apache.EcoMotto.web.DataStore.selectQuery(DataStore.java:162)
 	at org.apache.EcoMotto.web.QueryThreadController.run(QueryThreadController.java:33)
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EcoMotto Main 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> jetty-maven-plugin:9.2.2.v20140723:run (default-cli) @ EcoMotto >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ EcoMotto ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ EcoMotto ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:testResources (default-testResources) @ EcoMotto ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ EcoMotto ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< jetty-maven-plugin:9.2.2.v20140723:run (default-cli) @ EcoMotto <<<
+[INFO] 
+[INFO] --- jetty-maven-plugin:9.2.2.v20140723:run (default-cli) @ EcoMotto ---
+2015-05-17 03:02:45.624:INFO::main: Logging initialized @9193ms
+[INFO] Configuring Jetty for project: EcoMotto Main
+[INFO] webAppSourceDirectory not set. Trying src/main/webapp
+[INFO] Reload Mechanic: automatic
+[INFO] Classes = /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/target/classes
+[INFO] Context path = /
+[INFO] Tmp directory = /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/target/tmp
+[INFO] Web defaults = org/eclipse/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] web.xml file = file:/home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp/WEB-INF/web.xml
+[INFO] Webapp directory = /home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp
+2015-05-17 03:02:46.075:INFO:oejs.Server:main: jetty-9.2.2.v20140723
+2015-05-17 03:02:57.127:INFO:/:main: Spring WebApplicationInitializers detected on classpath: [org.apache.EcoMotto.web.config.EcoMottoWebInitializer@2814c6b5]
+2015-05-17 03:02:57.340:INFO:/:main: Initializing Spring FrameworkServlet 'dispatcher'
+15/05/17 03:02:57 INFO servlet.DispatcherServlet: FrameworkServlet 'dispatcher': initialization started
+15/05/17 03:02:57 INFO support.AnnotationConfigWebApplicationContext: Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Sun May 17 03:02:57 UTC 2015]; root of context hierarchy
+15/05/17 03:02:57 INFO support.AnnotationConfigWebApplicationContext: Registering annotated classes: [class org.apache.EcoMotto.web.config.EcoMottoWebConfig]
+15/05/17 03:02:57 INFO annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+15/05/17 03:02:58 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/web-query],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.WebQueryController.onSubmit(javax.servlet.http.HttpServletRequest) throws org.json.JSONException,java.io.IOException,java.lang.InterruptedException
+15/05/17 03:02:58 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.LoginController.onSubmit(java.lang.String,java.lang.String,org.springframework.ui.Model) throws java.io.IOException,java.net.URISyntaxException,org.json.JSONException,java.sql.SQLException
+15/05/17 03:02:58 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/zpiQuery],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.ZipQueryController.onSubmit(java.lang.String,org.springframework.ui.Model) throws java.io.IOException,java.net.URISyntaxException,org.json.JSONException,java.sql.SQLException,java.lang.InterruptedException
+15/05/17 03:02:58 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/web-zipQuery],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.ZipWebQueryController.onSubmit(javax.servlet.http.HttpServletRequest) throws org.json.JSONException,java.io.IOException,java.lang.InterruptedException
+15/05/17 03:02:58 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.RegisterController.onSubmit(java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+15/05/17 03:02:58 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.IndexController.index()
+15/05/17 03:02:58 INFO annotation.RequestMappingHandlerMapping: Mapped "{[/api/query],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.apache.EcoMotto.web.QueryController.onSubmit(java.lang.String,org.springframework.ui.Model) throws java.io.IOException,java.net.URISyntaxException,org.json.JSONException,java.sql.SQLException,java.lang.InterruptedException
+15/05/17 03:02:58 INFO handler.SimpleUrlHandlerMapping: Mapped URL path [/api/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15/05/17 03:02:58 INFO handler.SimpleUrlHandlerMapping: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
+15/05/17 03:02:58 INFO servlet.DispatcherServlet: FrameworkServlet 'dispatcher': initialization completed in 1639 ms
+2015-05-17 03:02:58.980:INFO:oejsh.ContextHandler:main: Started o.e.j.m.p.JettyWebAppContext@3b56099f{/,file:/home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp/,AVAILABLE}{file:/home/emottoserver_gmail_com/GitRepo/EcoMottoHouse-Web/EcoMottoHouse-Web/src/main/webapp/}
+2015-05-17 03:02:58.985:WARN:oejsh.RequestLogHandler:main: !RequestLog
+2015-05-17 03:02:59.009:INFO:oejs.ServerConnector:main: Started ServerConnector@6c5a980d{HTTP/1.1}{0.0.0.0:8899}
+2015-05-17 03:02:59.009:INFO:oejs.Server:main: Started @22597ms
+[INFO] Started Jetty Server
+15/05/17 03:02:59 INFO thymeleaf.TemplateEngine: [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+15/05/17 03:02:59 INFO templateresolver.AbstractTemplateResolver: [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ServletContextTemplateResolver
+15/05/17 03:02:59 INFO templateresolver.AbstractTemplateResolver: [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+15/05/17 03:02:59 INFO messageresolver.AbstractMessageResolver: [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+15/05/17 03:02:59 INFO messageresolver.AbstractMessageResolver: [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+15/05/17 03:02:59 INFO TemplateEngine.CONFIG: [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.templateresolver.ServletContextTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+15/05/17 03:02:59 INFO thymeleaf.TemplateEngine: [THYMELEAF] TEMPLATE ENGINE INITIALIZED
