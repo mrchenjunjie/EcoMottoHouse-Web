@@ -204,7 +204,6 @@ public class DataStore {
 	}
 	
 	public JSONObject zipQuery(JSONObject zip) throws SQLException, JSONException{
-		//JSONObject queryResult = new JSONObject();
 		JSONObject finalResult = new JSONObject();
 		
 		String url = "jdbc:oracle:thin:@169.54.208.180:1521/prodcatalog1pdb"; 
@@ -221,23 +220,15 @@ public class DataStore {
         
         while(zip.has("zip"+Integer.toString(zipCount))){
         	
-        	String query = "select p.*, z.zipcode5"
-        					+" from"
-        					+" nrg_product p,"
-        					+" product_mkt_bu_time pm,"
-        					+" utility u,"
-        					+" utility_zipcode uz,"
-        					+" zipcode z"
-        					+" where"
-        					+" p.product_id=pm.product_id"
-        					+" and pm.geo_id=u.id"
-        					+" and u.id=uz.utility_id"
-        					+" and uz.zipcode_id=z.id"
-        					+" and pm.offer_start<= sysdate"
-        					+" and (pm.offer_end = null or pm.offer_end> sysdate)"
-        					+" and z.zipcode5 in ('"+zip.getString("zip"+Integer.toString(zipCount))+"')";
-        	//String query = "select * from NRG_PRODUCT where ZIPCODE = '"+zip.getString("zip"+Integer.toString(zipCount))+"'";
-        	//System.out.println("Query to DB: "+query);
+        	String query = "select * from prod_matrix"
+        					+" where LDC_Short in"
+        					+" ("
+        					+" select distinct u.utility_abbr"
+        					+" from zipcode z, utility_zipcode uz, utility u"
+        					+" where z.id=uz.zipcode_id"
+        					+" and uz.utility_id=u.id"
+        					+" and z.zipcode5 in ('"+zip.getString("zip"+Integer.toString(zipCount))+"'))";
+
         	PreparedStatement preStatement = conn.prepareStatement(query);
             
             ResultSet result = preStatement.executeQuery();
