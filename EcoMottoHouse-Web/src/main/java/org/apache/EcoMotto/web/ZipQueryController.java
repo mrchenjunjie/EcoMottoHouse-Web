@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ZipQueryController {
         //@Autowired
         //private IPersonService personService;
-	@RequestMapping(value={"/api/zpiQuery"}, method=RequestMethod.POST)
+	@RequestMapping(value={"/api/zipQuery"}, method=RequestMethod.POST)
     public @ResponseBody String onSubmit(@RequestParam(value="data", required=false) String data,
                 Model model) throws IOException, URISyntaxException, JSONException, SQLException, InterruptedException {
 
