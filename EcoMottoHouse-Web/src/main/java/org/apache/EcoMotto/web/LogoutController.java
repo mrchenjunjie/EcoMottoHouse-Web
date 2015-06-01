@@ -13,17 +13,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
-public class ZipQueryController {
+public class LogoutController {
         //@Autowired
         //private IPersonService personService;
-	@RequestMapping(value={"/api/zipQuery"}, method=RequestMethod.POST)
+	@RequestMapping(value={"/api/logoutQuery"}, method=RequestMethod.POST)
     public @ResponseBody String onSubmit(@RequestParam(value="data", required=false) String data,
                 Model model) throws IOException, URISyntaxException, JSONException, SQLException, InterruptedException {
 
                 model.addAttribute("data", data);
                 JSONObject request = new JSONObject(data);
                 //System.out.println("Request from Client: "+request.toString());
-                ZipQueryThreadController queryThread = new ZipQueryThreadController(request);
+                LogoutQueryThreadController queryThread = new LogoutQueryThreadController(request);
     	        
     	        queryThread.start();
     	        Thread.sleep(5000);

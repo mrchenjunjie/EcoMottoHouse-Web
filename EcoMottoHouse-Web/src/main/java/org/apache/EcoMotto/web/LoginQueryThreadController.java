@@ -20,29 +20,34 @@ public class LoginQueryThreadController extends Thread{
         Customer customer = new Customer();
         DataStore dataStore = new DataStore();
         JSONObject tempResult = new JSONObject();
+        QuerySessionController session = new QuerySessionController();
         try {
         	//JSONObject jsonObject = new JSONObject(data);
-            
+            if(session.checkUserAvailable(this.request.getString("email"))){
+            	session.updateSession(this.request.getString("email"));
+            	tempResult.put("result", "Login Success!");
+            }else{
+            	if(dataStore.ifCustomerExist(this.request.getString("email")) == true){
+            		if(dataStore.ifAPIRole(this.request.getString("email")) == true){
+            			customer = dataStore.readCustomer(this.request.getString("email"));
+                        //JSONObject zip = this.request.getJSONObject("zip");
+                        if(customer.getPassword().equals(this.request.get("password"))){
+                        	tempResult.put("result", "Login Success!");
+                        	session.addSession(this.request.getString("email"));
+                        	//System.out.println("After user validation, start querying!");
+                        	//tempResult = dataStore.zipQuery(zip);
+                        	//System.out.println("Result from database: "+tempResult.toString());
+                        }else{
+                        	tempResult.put("result", "User ID does not match with password");
+                        }
+            		}else{
+            			tempResult.put("result", "This user is not allowed to use API function");
+            		}
+            	}else{
+            		tempResult.put("result", "User ID does not exist in the system");
+            	}
+            }
             //System.out.println("Message from client request: "+jsonObject.toString());
-        	if(dataStore.ifCustomerExist(this.request.getString("email")) == true){
-        		if(dataStore.ifAPIRole(this.request.getString("email")) == true){
-        			customer = dataStore.readCustomer(this.request.getString("email"));
-                    //JSONObject zip = this.request.getJSONObject("zip");
-                    if(customer.getPassword().equals(this.request.get("password"))){
-                    	tempResult.put("result", "success");
-                    	//System.out.println("After user validation, start querying!");
-                    	//tempResult = dataStore.zipQuery(zip);
-                    	//System.out.println("Result from database: "+tempResult.toString());
-                    }else{
-                    	tempResult.put("result", "User ID does not match with password");
-                    }
-        		}else{
-        			tempResult.put("result", "This user is not allowed to use API function");
-        		}
-        	}else{
-        		tempResult.put("result", "User ID does not exist in the system");
-        	}
-            
         	this.setResult(tempResult);
         	
 		} catch (IOException e) {
@@ -66,4 +71,3 @@ public class LoginQueryThreadController extends Thread{
 		this.result = result;
 	}
 }
-
